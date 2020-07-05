@@ -68,7 +68,7 @@ extension DistViewController: UITableViewDataSource {
         return distt.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: constant.distCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = distt[indexPath.row].distName
         return cell
     }

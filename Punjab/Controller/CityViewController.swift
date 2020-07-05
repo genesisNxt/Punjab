@@ -75,7 +75,7 @@ extension CityViewController: UITableViewDataSource{
         return city.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: constant.cityCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = city[indexPath.row].cityName
         return cell
     }

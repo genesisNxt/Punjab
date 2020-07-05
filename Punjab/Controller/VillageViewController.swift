@@ -8,9 +8,8 @@
 
 import UIKit
 import CoreData
-import SwipeCellKit
 
-class VillageViewController: UIViewController {
+class VillageViewController: SwipeTableViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -22,9 +21,15 @@ class VillageViewController: UIViewController {
         super.viewDidLoad()
         tableView.rowHeight = 75.0
         tableView.dataSource = self
-        tableView.delegate = self
         searchBar.delegate = self
         loadVillage()
+    }
+    
+    // MARK:- delete method
+    override func updateModel(at indexPath: IndexPath) {
+                    self.context.delete(self.village[indexPath.row])
+                    self.village.remove(at: indexPath.row)
+                    self.saveVillage()
     }
    // MARK:- Save Village
     @IBAction func addVillage(_ sender: UIBarButtonItem) {
@@ -69,27 +74,19 @@ class VillageViewController: UIViewController {
         }
         tableView.reloadData()
     }
-}
     // MARK:- UITableView DataSource Methods
-extension VillageViewController:UITableViewDataSource{
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return village.count
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: constant.villageCell, for: indexPath) as! SwipeTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         cell.textLabel?.text = village[indexPath.row].villageName
-        cell.delegate = self
+        
         return cell
-    }
-}
-extension VillageViewController: UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        context.delete(village[indexPath.row])
-//        village.remove(at: indexPath.row)
-//          saveVillage()
     }
 }
 extension VillageViewController: UISearchBarDelegate{
@@ -107,30 +104,6 @@ extension VillageViewController: UISearchBarDelegate{
                        self.tableView.resignFirstResponder()
                    }
                }
-           }
-    }
-extension VillageViewController: SwipeTableViewCellDelegate{
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-        guard orientation == .right else { return nil }
-
-        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
-        self.context.delete(self.village[indexPath.row])
-        self.village.remove(at: indexPath.row)
-        self.saveVillage()
-        
-        }
-
-        // customize the action appearance
-        deleteAction.image = UIImage(named: "trash-circle")
-
-        return [deleteAction]
-    }
-    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
-        var options = SwipeOptions()
-        options.expansionStyle = .destructive
-        //options.transitionStyle = .border
-        return options
     }
 }
-
 

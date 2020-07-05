@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		44E70F4324B0201200F82722 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E70F4224B0201200F82722 /* Constant.swift */; };
 		44E70F4824B0211200F82722 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E70F4724B0211200F82722 /* CityViewController.swift */; };
 		44E70F4B24B0585500F82722 /* VillageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E70F4A24B0585500F82722 /* VillageViewController.swift */; };
+		44E70F4D24B2040D00F82722 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E70F4C24B2040D00F82722 /* SwipeTableViewController.swift */; };
 		870D76DCF10988E30E077834 /* Pods_Punjab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE14819E119E1BD89F6B244B /* Pods_Punjab.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		44E70F4224B0201200F82722 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		44E70F4724B0211200F82722 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		44E70F4A24B0585500F82722 /* VillageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillageViewController.swift; sourceTree = "<group>"; };
+		44E70F4C24B2040D00F82722 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		795F7007CC67A242188CCC4C /* Pods-Punjab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Punjab.release.xcconfig"; path = "Target Support Files/Pods-Punjab/Pods-Punjab.release.xcconfig"; sourceTree = "<group>"; };
 		AE14819E119E1BD89F6B244B /* Pods_Punjab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Punjab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -56,7 +58,6 @@
 				19FC213BA88E1DD56E4AD83A /* Pods-Punjab.debug.xcconfig */,
 				795F7007CC67A242188CCC4C /* Pods-Punjab.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -99,6 +100,7 @@
 				44E70F2F24B01FF900F82722 /* DistViewController.swift */,
 				44E70F4724B0211200F82722 /* CityViewController.swift */,
 				44E70F4A24B0585500F82722 /* VillageViewController.swift */,
+				44E70F4C24B2040D00F82722 /* SwipeTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -251,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44E70F4D24B2040D00F82722 /* SwipeTableViewController.swift in Sources */,
 				44E70F3024B01FF900F82722 /* DistViewController.swift in Sources */,
 				44E70F2C24B01FF900F82722 /* AppDelegate.swift in Sources */,
 				44E70F4324B0201200F82722 /* Constant.swift in Sources */,
