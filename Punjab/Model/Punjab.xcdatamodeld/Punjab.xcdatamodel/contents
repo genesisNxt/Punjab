@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="City" representedClassName=".City" syncable="YES" codeGenerationType="class">
+        <attribute name="cityName" attributeType="String"/>
+        <relationship name="parentDistrict" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="District" inverseName="city" inverseEntity="District"/>
+        <relationship name="village" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Village" inverseName="parentCity" inverseEntity="Village"/>
+    </entity>
+    <entity name="District" representedClassName=".District" syncable="YES" codeGenerationType="class">
+        <attribute name="distName" attributeType="String"/>
+        <relationship name="city" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="City" inverseName="parentDistrict" inverseEntity="City"/>
+    </entity>
+    <entity name="Village" representedClassName=".Village" syncable="YES" codeGenerationType="class">
+        <attribute name="villageName" attributeType="String"/>
+        <relationship name="parentCity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="City" inverseName="village" inverseEntity="City"/>
+    </entity>
+    <elements>
+        <element name="City" positionX="164.89453125" positionY="-29.20703125" width="128" height="88"/>
+        <element name="District" positionX="-39.30078125" positionY="-61.9140625" width="128" height="73"/>
+        <element name="Village" positionX="370.95703125" positionY="25.078125" width="128" height="73"/>
+    </elements>
+</model>

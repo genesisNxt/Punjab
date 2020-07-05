@@ -9,23 +9,33 @@
 /* Begin PBXBuildFile section */
 		44E70F2C24B01FF900F82722 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E70F2B24B01FF900F82722 /* AppDelegate.swift */; };
 		44E70F2E24B01FF900F82722 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E70F2D24B01FF900F82722 /* SceneDelegate.swift */; };
-		44E70F3024B01FF900F82722 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E70F2F24B01FF900F82722 /* ViewController.swift */; };
+		44E70F3024B01FF900F82722 /* DistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E70F2F24B01FF900F82722 /* DistViewController.swift */; };
 		44E70F3324B01FF900F82722 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E70F3124B01FF900F82722 /* Main.storyboard */; };
 		44E70F3624B01FF900F82722 /* Punjab.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 44E70F3424B01FF900F82722 /* Punjab.xcdatamodeld */; };
 		44E70F3824B01FFA00F82722 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E70F3724B01FFA00F82722 /* Assets.xcassets */; };
 		44E70F3B24B01FFA00F82722 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E70F3924B01FFA00F82722 /* LaunchScreen.storyboard */; };
+		44E70F4324B0201200F82722 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E70F4224B0201200F82722 /* Constant.swift */; };
+		44E70F4824B0211200F82722 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E70F4724B0211200F82722 /* CityViewController.swift */; };
+		44E70F4B24B0585500F82722 /* VillageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E70F4A24B0585500F82722 /* VillageViewController.swift */; };
+		870D76DCF10988E30E077834 /* Pods_Punjab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE14819E119E1BD89F6B244B /* Pods_Punjab.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19FC213BA88E1DD56E4AD83A /* Pods-Punjab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Punjab.debug.xcconfig"; path = "Target Support Files/Pods-Punjab/Pods-Punjab.debug.xcconfig"; sourceTree = "<group>"; };
 		44E70F2824B01FF900F82722 /* Punjab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Punjab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E70F2B24B01FF900F82722 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44E70F2D24B01FF900F82722 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		44E70F2F24B01FF900F82722 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		44E70F2F24B01FF900F82722 /* DistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistViewController.swift; sourceTree = "<group>"; };
 		44E70F3224B01FF900F82722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44E70F3524B01FF900F82722 /* Punjab.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Punjab.xcdatamodel; sourceTree = "<group>"; };
 		44E70F3724B01FFA00F82722 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44E70F3A24B01FFA00F82722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44E70F3C24B01FFA00F82722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44E70F4224B0201200F82722 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		44E70F4724B0211200F82722 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		44E70F4A24B0585500F82722 /* VillageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillageViewController.swift; sourceTree = "<group>"; };
+		795F7007CC67A242188CCC4C /* Pods-Punjab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Punjab.release.xcconfig"; path = "Target Support Files/Pods-Punjab/Pods-Punjab.release.xcconfig"; sourceTree = "<group>"; };
+		AE14819E119E1BD89F6B244B /* Pods_Punjab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Punjab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +43,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870D76DCF10988E30E077834 /* Pods_Punjab.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3921B941BD64326C324FF4B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19FC213BA88E1DD56E4AD83A /* Pods-Punjab.debug.xcconfig */,
+				795F7007CC67A242188CCC4C /* Pods-Punjab.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		44E70F1F24B01FF800F82722 = {
 			isa = PBXGroup;
 			children = (
 				44E70F2A24B01FF900F82722 /* Punjab */,
 				44E70F2924B01FF900F82722 /* Products */,
+				3921B941BD64326C324FF4B8 /* Pods */,
+				B8CAEA54C90C0259CED38BEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,14 +83,57 @@
 			children = (
 				44E70F2B24B01FF900F82722 /* AppDelegate.swift */,
 				44E70F2D24B01FF900F82722 /* SceneDelegate.swift */,
-				44E70F2F24B01FF900F82722 /* ViewController.swift */,
-				44E70F3124B01FF900F82722 /* Main.storyboard */,
-				44E70F3724B01FFA00F82722 /* Assets.xcassets */,
-				44E70F3924B01FFA00F82722 /* LaunchScreen.storyboard */,
+				44E70F4624B020C500F82722 /* Model */,
+				44E70F4524B020B800F82722 /* View */,
+				44E70F4424B020A600F82722 /* Controller */,
+				44E70F4924B0380100F82722 /* Supported Files */,
 				44E70F3C24B01FFA00F82722 /* Info.plist */,
-				44E70F3424B01FF900F82722 /* Punjab.xcdatamodeld */,
+				44E70F4224B0201200F82722 /* Constant.swift */,
 			);
 			path = Punjab;
+			sourceTree = "<group>";
+		};
+		44E70F4424B020A600F82722 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				44E70F2F24B01FF900F82722 /* DistViewController.swift */,
+				44E70F4724B0211200F82722 /* CityViewController.swift */,
+				44E70F4A24B0585500F82722 /* VillageViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		44E70F4524B020B800F82722 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				44E70F3124B01FF900F82722 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		44E70F4624B020C500F82722 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				44E70F3424B01FF900F82722 /* Punjab.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		44E70F4924B0380100F82722 /* Supported Files */ = {
+			isa = PBXGroup;
+			children = (
+				44E70F3724B01FFA00F82722 /* Assets.xcassets */,
+				44E70F3924B01FFA00F82722 /* LaunchScreen.storyboard */,
+			);
+			path = "Supported Files";
+			sourceTree = "<group>";
+		};
+		B8CAEA54C90C0259CED38BEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE14819E119E1BD89F6B244B /* Pods_Punjab.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44E70F3F24B01FFA00F82722 /* Build configuration list for PBXNativeTarget "Punjab" */;
 			buildPhases = (
+				C4729F34078075BB99EA21E8 /* [CP] Check Pods Manifest.lock */,
 				44E70F2424B01FF900F82722 /* Sources */,
 				44E70F2524B01FF900F82722 /* Frameworks */,
 				44E70F2624B01FF900F82722 /* Resources */,
+				088513B70E68F08FF3BBF2F2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,15 +204,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		088513B70E68F08FF3BBF2F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Punjab/Pods-Punjab-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Punjab/Pods-Punjab-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Punjab/Pods-Punjab-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4729F34078075BB99EA21E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Punjab-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		44E70F2424B01FF900F82722 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44E70F3024B01FF900F82722 /* ViewController.swift in Sources */,
+				44E70F3024B01FF900F82722 /* DistViewController.swift in Sources */,
 				44E70F2C24B01FF900F82722 /* AppDelegate.swift in Sources */,
+				44E70F4324B0201200F82722 /* Constant.swift in Sources */,
+				44E70F4B24B0585500F82722 /* VillageViewController.swift in Sources */,
 				44E70F2E24B01FF900F82722 /* SceneDelegate.swift in Sources */,
 				44E70F3624B01FF900F82722 /* Punjab.xcdatamodeld in Sources */,
+				44E70F4824B0211200F82722 /* CityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +399,7 @@
 		};
 		44E70F4024B01FFA00F82722 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19FC213BA88E1DD56E4AD83A /* Pods-Punjab.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +417,7 @@
 		};
 		44E70F4124B01FFA00F82722 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 795F7007CC67A242188CCC4C /* Pods-Punjab.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
