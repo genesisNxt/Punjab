@@ -89,7 +89,7 @@ extension VillageViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        context.delete(village[indexPath.row])
 //        village.remove(at: indexPath.row)
-//        tableView.reloadData()
+//          saveVillage()
     }
 }
 extension VillageViewController: UISearchBarDelegate{
