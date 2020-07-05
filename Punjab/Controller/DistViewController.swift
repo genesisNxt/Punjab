@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class DistViewController: UIViewController {
+class DistViewController: SwipeTableViewController {
 
     @IBOutlet weak var tableView: UITableView!
     let constant = Constant()
@@ -19,6 +19,7 @@ class DistViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = 75.0
     loadDistt()
     }
 // MARK:- Add Distt
@@ -30,6 +31,7 @@ class DistViewController: UIViewController {
             newDistt.distName = textField.text!
             self.distt.append(newDistt)
             self.saveDistt()
+            self.tableView.reloadData()
         }
         alert.addAction(action)
         alert.addTextField { (alertTextField) in
@@ -46,7 +48,7 @@ class DistViewController: UIViewController {
         } catch  {
             print("Error Saving\(error)")
         }
-        tableView.reloadData()
+        
     }
     
     // MARK:- load Distt
@@ -58,17 +60,21 @@ class DistViewController: UIViewController {
         }
         tableView.reloadData()
     }
-}
+    // MARK:- delete methods
+    override func updateModel(at indexPath: IndexPath) {
+        context.delete(distt[indexPath.row])
+        distt.remove(at: indexPath.row)
+        saveDistt()
+    }
     // MARK:- UITableView datasourse methods
-extension DistViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return distt.count
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         cell.textLabel?.text = distt[indexPath.row].distName
         return cell
     }
@@ -78,9 +84,6 @@ extension DistViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: constant.goToCity, sender: self)
-//        context.delete(distt[indexPath.row])
-//        distt.remove(at: indexPath.row)
-//            saveDistt()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! CityViewController

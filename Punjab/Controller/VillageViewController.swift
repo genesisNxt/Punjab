@@ -27,9 +27,9 @@ class VillageViewController: SwipeTableViewController {
     
     // MARK:- delete method
     override func updateModel(at indexPath: IndexPath) {
-                    self.context.delete(self.village[indexPath.row])
-                    self.village.remove(at: indexPath.row)
-                    self.saveVillage()
+                    context.delete(village[indexPath.row])
+                    village.remove(at: indexPath.row)
+                    saveVillage()
     }
    // MARK:- Save Village
     @IBAction func addVillage(_ sender: UIBarButtonItem) {
@@ -75,10 +75,6 @@ class VillageViewController: SwipeTableViewController {
         tableView.reloadData()
     }
     // MARK:- UITableView DataSource Methods
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return village.count
     }

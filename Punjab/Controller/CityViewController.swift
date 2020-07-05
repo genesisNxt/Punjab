@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-class CityViewController: UIViewController {
+class CityViewController: SwipeTableViewController {
     
     let constant = Constant()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -20,6 +20,7 @@ class CityViewController: UIViewController {
         super.viewDidLoad()
         tableview.dataSource = self
         tableview.delegate = self
+        tableview.rowHeight = 75.0
         loadCity()
     }
     // MARK:- Add City
@@ -33,6 +34,7 @@ class CityViewController: UIViewController {
             newCity.parentDistrict = self.selectedDist
             self.city.append(newCity)
             self.saveCity()
+            self.tableview.reloadData()
         }
         alert.addAction(action)
         alert.addTextField { (alertTextField) in
@@ -48,7 +50,7 @@ class CityViewController: UIViewController {
         } catch  {
             print("Error Saving\(error)")
         }
-        tableview.reloadData()
+        
     }
     // MARK:- loadCity
     func loadCity(with request: NSFetchRequest<City> = City.fetchRequest(), predicate: NSPredicate? = nil){
@@ -65,17 +67,22 @@ class CityViewController: UIViewController {
         }
         tableview.reloadData()
     }
-}
+    // MARK:- delete methods
+    override func updateModel(at indexPath: IndexPath) {
+        context.delete(city[indexPath.row])
+        city.remove(at: indexPath.row)
+        saveCity()
+    }
+    
 // MARK:- UITableView DataSource
-extension CityViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return city.count
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         cell.textLabel?.text = city[indexPath.row].cityName
         return cell
     }
@@ -83,9 +90,6 @@ extension CityViewController: UITableViewDataSource{
 // MARK:- UITableView Delegate
 extension CityViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//                context.delete(city[indexPath.row])
-//                city.remove(at: indexPath.row)
-//                saveCity()
         performSegue(withIdentifier: constant.goToVillage, sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

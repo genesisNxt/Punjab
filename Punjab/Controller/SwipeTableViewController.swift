@@ -13,7 +13,7 @@ class SwipeTableViewController: UIViewController, UITableViewDataSource, SwipeTa
     
     
 
-    var cell : UITableViewCell?
+   // var cell : UITableViewCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class SwipeTableViewController: UIViewController, UITableViewDataSource, SwipeTa
         return 2
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SwipeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SwipeTableViewCell
         cell.delegate = self
         return cell
     }
